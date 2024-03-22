@@ -1,0 +1,69 @@
+@use './font/inter.scss';
+@use './color.scss';
+@use './variables.scss';
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: 'Inter', sans-seri;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-padding-top: var(--header-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block: unset;
+  font-size: unset;
+  font-weight: unset;
+  margin-block-start: unset;
+  margin-block-end: unset;
+  margin-inline-start: unset;
+  margin-inline-end: unset;
+}
+
+a {
+  text-decoration: none;
+  color: var(--boston-blue);
+  transition: 0.1s ease;
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+
+  /*&:hover {
+    // opacity: 0.8;
+  }*/
+}
+
+img {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}

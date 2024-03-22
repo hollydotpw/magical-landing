@@ -1,0 +1,11 @@
+@mixin mobile {
+  @media screen and (max-width: 720px) {
+    @content;
+  }
+}
+
+@mixin mobile-landscape {
+  @media screen and (max-height: 520px) and (orientation: landscape) {
+    @content;
+  }
+}

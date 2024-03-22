@@ -1,0 +1,24 @@
+@use 'style/mixin';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  padding: 0 20px;
+
+  height: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  @include mixin.mobile {
+    padding: 0;
+  }
+}
+
+.text {
+  max-width: 740px;
+}

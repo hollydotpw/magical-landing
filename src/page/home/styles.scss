@@ -1,0 +1,167 @@
+@use 'style/mixin';
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--midnight);
+  color: var(--boston-blue) !important;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  height: 100vh;
+
+  .text {
+    padding: 3.5rem 0;
+
+    @include mixin.mobile {
+      padding: 0;
+    }
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    //font-size: 10rem;
+    font-size: 8.33vw;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    margin: 0 20px;
+
+    // ipad
+    @media screen and (max-width: 768px) {
+      font-size: 18vw;
+    }
+
+    @include mixin.mobile {
+      //font-size: 4rem;
+      font-size: 16vw;
+    }
+
+    // samsung galaxy z fold (my phone)
+    @media screen and (max-width: 280px) {
+      font-size: 3.1rem;
+    }
+    @include mixin.mobile-landscape {
+      font-size: 10vw;
+    }
+
+  }
+
+  .background {
+    position: relative;
+    display: block;
+    color: var(--medium-red-violet);
+    background: linear-gradient(90deg, var(--boston-blue), #8c259d, var(--medium-red-violet));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .description {
+    margin-top: 70px;
+    line-height: 1.6em !important;
+    font-weight: 400;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    text-align: center;
+    @include mixin.mobile {
+      margin-top: 50px;
+      display: none;
+    }
+    @include mixin.mobile-landscape {
+      display: none;
+    }
+  }
+
+  .btn {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: var(--boston-blue);
+      font: inherit;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      color: var(--midnight);
+      border: 1px solid var(--boston-blue);
+      border-radius: 5px;
+      width: 160px;
+      height: 50px;
+
+      &:first-child {
+        margin-right: 43px;
+      }
+
+      &:nth-child(2) {
+        background: transparent;
+        border: 1px solid var(--boston-blue);
+        color: var(--boston-blue);
+      }
+    }
+
+    @include mixin.mobile {
+      padding: 0 20px;
+      flex-direction: column;
+      > a {
+        width: 100%;
+        margin-right: 0;
+
+        &:first-child {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+
+    @include mixin.mobile-landscape {
+      margin-top: 40px;
+      flex-direction: row;
+
+      > a {
+        width: 160px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.button_shine {
+  animation-delay: 0.75s;
+  animation-duration: 2s;
+  animation-name: shine-animation;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  color: hsla(0, 0%, 100%, 0.1);
+
+  position: absolute;
+  top: -50%;
+  bottom: 0;
+  right: 0;
+}
+
+.shine {
+  background-color: currentColor;
+  height: 300%;
+  position: relative;
+  top: -100%;
+  transform: rotate(30deg);
+  width: 56px;
+}
+
+@keyframes shine-animation {
+  0% {
+    transform: translate3d(-300%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(200%, 0, 0);
+  }
+}

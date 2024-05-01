@@ -11,14 +11,9 @@
   },
   "x": [
     {
-      "name": "magical-landing-web",
+      "name": "magical-web",
       "preset": "browser-preact",
       "entry": "./src/entry.tsx"
-    },
-    {
-      "name": "magical-landing-worker",
-      "preset": "webworker-preact",
-      "entry": "./src/entry-worker.tsx"
     }
   ],
   "devDependencies": {
